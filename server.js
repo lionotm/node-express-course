@@ -47,6 +47,23 @@ app.post("/login", function (req, res) {
   }
 });
 
+app.post("/logout", function (req, res) {
+  const username = req.body.username;
+  const mockUsername = "billyTheKid";
+
+  if (username === mockUsername) {
+    res.json({
+      sucess: true,
+      message: "successfully logged out!",
+    });
+  } else {
+    res.json({
+      sucess: false,
+      message: "error",
+    });
+  }
+});
+
 app.listen(8000, function () {
   console.log("server is running");
 });
